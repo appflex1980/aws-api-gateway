@@ -17,11 +17,7 @@ module "s3" {
 
 module "api-gateway" {
   source = "./modules/api-gateway"
-
-  project              = var.project_name
-  bucket_name          = module.s3.bucket_name
-  bucket_arn           = module.s3.bucket_arn
-  bucket_domain_name   = module.s3.bucket_regional_domain_name
+  website_endpoint = module.s3.website_endpoint
   depends_on = [module.s3]
 }
 
