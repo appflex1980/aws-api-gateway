@@ -20,6 +20,7 @@ resource "aws_api_gateway_method" "proxy" {
   }
 }
 
+#---🌐 Integration → S3 Website
 resource "aws_api_gateway_integration" "proxy" {
   rest_api_id = aws_api_gateway_rest_api.site_api.id
   resource_id = aws_api_gateway_resource.proxy.id
@@ -28,7 +29,7 @@ resource "aws_api_gateway_integration" "proxy" {
   type                    = "HTTP_PROXY"
   integration_http_method = "ANY"
 
-  uri = "http://${aws_s3_bucket.site.bucket}.s3-website-us-east-1.amazonaws.com/{proxy}"
+  uri = "http://${aws_s3_bucket.site.bucket}.s3-website-${data.aws_region.current.name}.amazonaws.com/{proxy}"
 
   request_parameters = {
     "integration.request.path.proxy" = "method.request.path.proxy"
@@ -50,21 +51,5 @@ resource "aws_api_gateway_integration" "root" {
   type                    = "HTTP_PROXY"
   integration_http_method = "ANY"
 
-  uri = "http://${aws_s3_bucket.site.bucket}.s3-website-us-east-1.amazonaws.com"
+  uri = "http://${aws_s3_bucket.site.bucket}.s3-website-${data.aws_region.current.name}.amazonaws.com"
 }
-
-resource "aws_api_gateway_deployment" "deploy" {
-  rest_api_id = aws_api_gateway_rest_api.site_api.id
-
-  depends_on = [
-    aws_api_gateway_integration.proxy,
-    aws_api_gateway_integration.root
-  ]
-}
-
-resource "aws_api_gateway_stage" "prod" {
-  deployment_id = aws_api_gateway_deployment.deploy.id
-  rest_api_id   = aws_api_gateway_rest_api.site_api.id
-  stage_name    = "prod"
-}
-
