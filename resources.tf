@@ -15,8 +15,8 @@ module "s3" {
   depends_on = [module.vpc]
 }
 
-module "cloudfront" {
-  source = "./modules/cloudfront"
+module "api-gateway" {
+  source = "./modules/api-gateway"
 
   project              = var.project_name
   bucket_name          = module.s3.bucket_name
