@@ -3,14 +3,22 @@ variable "aws_region" {
 default = "us-west-2"
 }
 
-variable "project_name" {
-default = "static-site"
-}
-
-variable "vpc_cidr" {
-  type = string
+variable "project" {
+  description = "Project name"
+  type        = string
 }
 
 variable "bucket_name" {
-  type = string
+  description = "S3 bucket name for website"
+  type        = string
+}
+
+variable "bucket_arn" {
+  description = "S3 bucket ARN"
+  type        = string
+}
+
+variable "bucket_domain_name" {
+  description = "S3 website or regional domain"
+  type        = string
 }
