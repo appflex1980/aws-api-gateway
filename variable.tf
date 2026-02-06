@@ -22,3 +22,7 @@ variable "bucket_domain_name" {
   description = "S3 website or regional domain"
   type        = string
 }
+
+variable "website_endpoint" {
+  type = string
+}
