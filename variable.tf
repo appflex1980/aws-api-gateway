@@ -3,15 +3,16 @@ variable "aws_region" {
 default = "us-west-2"
 }
 
-variable "project" {
-  description = "Project name"
+variable "project_name" {
+  description = "Project name used for tagging VPC resources"
   type        = string
 }
 
 variable "bucket_name" {
-  description = "S3 bucket name for website"
+  description = "Name of the S3 bucket to create"
   type        = string
 }
+
 
 variable "bucket_arn" {
   description = "S3 bucket ARN"
