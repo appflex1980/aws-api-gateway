@@ -14,16 +14,3 @@ variable "bucket_name" {
 }
 
 
-variable "bucket_arn" {
-  description = "S3 bucket ARN"
-  type        = string
-}
-
-variable "bucket_domain_name" {
-  description = "S3 website or regional domain"
-  type        = string
-}
-
-variable "website_endpoint" {
-  type = string
-}
