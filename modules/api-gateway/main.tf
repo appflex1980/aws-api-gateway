@@ -1,5 +1,4 @@
 
-
 resource "aws_api_gateway_rest_api" "this" {
   name        = "${var.project}-api"
   description = "API Gateway for ${var.project}"
