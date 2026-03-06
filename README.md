@@ -1,8 +1,7 @@
 
 
 ## AWS | API Gateway + S3
-Architecture with public and private subnets, an Application Load Balancer (ALB), EC2 instances, and private resources. It demonstrates how users interact with the system, and how scaling and secure resource access are managed.
-
+Architecture with public and private subnets, an ApiGateway and S3 Bucket 
 
 
 🎯 Architecture Overview
