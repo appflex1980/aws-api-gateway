@@ -2,7 +2,7 @@
 
 
 ## AWS | API Gateway + S3
-Architecture with public and private subnets, an ApiGateway and S3 Bucket 
+This architecture demonstrates a simple cloud-based static website delivery system using three primary services from Amazon Web Services:
 
 
 🎯 Architecture Overview
