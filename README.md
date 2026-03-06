@@ -6,13 +6,9 @@ Architecture with public and private subnets, an ApiGateway and S3 Bucket
 
 🎯 Architecture Overview
 ```
-✅ VPC containing Public and Private Subnets
-✅ Internet Gateway for outbound internet access
-✅ NAT Gateway in the public subnet for private subnet egress
-✅ Auto Scaling Group (ASG) using a Launch Template
-✅ EC2 instances in the ASG, scaling in/out automatically
-✅ Users hitting the system via the public internet
-✅ Private resources (like RDS, caches) in the private subnets
+✅ AWS VPC
+✅ AWS S3 static website
+✅ AWS API Gateway acting as a frontend or proxy
 ```
 
 
