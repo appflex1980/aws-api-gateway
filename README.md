@@ -1,3 +1,4 @@
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4f1902e3-14ed-4c0c-a347-1d7a1d193a54" />
 
 
 ## AWS | API Gateway + S3
